@@ -36,16 +36,16 @@ qa_chain = RetrievalQA.from_chain_type(
     chain_type_kwargs={"prompt": QA_CHAIN_PROMPT}
 )
 
-question = "What is the definition of Prompt Injection Vulnerability "
+question = "What is the definition of Prompt Injection Vulnerability?"
 result = qa_chain({"query": question})
 result["result"]
 result["source_documents"][0]
 
 
 import os
-os.environ["LANGCHAIN_TRACING_V2"] = "false"
+os.environ["LANGCHAIN_TRACING_V2"] = "false"	# change if debug is required
 os.environ["LANGCHAIN_ENDPOINT"] = "https://api.langchain.plus"
-os.environ["LANGCHAIN_API_KEY"] = "ls__cbfaa327f1be4d8ebb00f2360758435f" # replace with your api key
+os.environ["LANGCHAIN_API_KEY"] = "XXXXXXXXXXXXXX" # replace with your api key
 
 qa_chain_mr = RetrievalQA.from_chain_type(
     llm,
